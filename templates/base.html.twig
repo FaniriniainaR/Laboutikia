@@ -80,16 +80,17 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link disabled"></a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Votre recherche" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Rechercher</button>
-        </form>
+        {% if app.user%}
+          <a href="{{ path('app_compte')}}">Mon compte</a> | <a href="{{ path('app_logout')}}">Deconnexion</a>
+        {%else%}
+          <a href="{{ path('app_login')}}">Connexion</a> | <a href="{{ path('app_registre')}}">Inscription</a>
+        {% endif %}
       </div>
     </div>
   </nav>
