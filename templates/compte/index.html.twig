@@ -5,4 +5,6 @@
 {% block content %}
     <h1>Mon compte</h1>
     Bienvenu {{ app.user.prenom }} sur LABOUTIKIA
+    <br/>
+    <a href="{{ path('app_change_password')}}"> Modifier mon mot de passe</a><br/><br/>
 {% endblock %}
